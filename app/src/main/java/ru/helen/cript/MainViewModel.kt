@@ -14,7 +14,6 @@ import ru.helen.cript.repository.NetworkRepositoryImpl
 class MainViewModel() : ViewModel() {
     val client : RestClient = RestClient().getInstance()
     val networkRepository : NetworkRepository = NetworkRepositoryImpl(client.getApi())
-//    networkRepository.getCriptoRate()
     var response : MutableLiveData<Response> = networkRepository.getCriptoRate()
     fun getCriptoRate() : MutableLiveData<Response> = response
 

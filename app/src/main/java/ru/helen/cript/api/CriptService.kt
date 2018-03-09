@@ -8,7 +8,7 @@ import retrofit2.http.GET
  *
  */
 public interface CriptService {
-    @GET("v1/ticker")
+    @GET("v1/ticker/?convert=RUB")
     fun getCriptoRate(): Observable<List<Cript>>
 
 }

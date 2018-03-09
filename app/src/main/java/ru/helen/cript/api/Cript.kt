@@ -35,7 +35,9 @@ data class Cript(
         @SerializedName("percent_change_7d")
         var percentChange7d: String,
         @SerializedName("last_updated")
-        var lastUpdated: String
+        var lastUpdated: String,
+        @SerializedName("price_rub")
+        var priceRub: String
 
 )
 

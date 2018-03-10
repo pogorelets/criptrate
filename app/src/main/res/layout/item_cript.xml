@@ -2,7 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark">
 
     <data>
 
@@ -14,83 +15,82 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv1h"
                 style="@style/tvLabelHours"
-                android:layout_height="wrap_content"
-                android:text="1h"
+                android:id="@+id/tv1h"
+                android:text="@string/_1h"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 app:layout_constraintBottom_toTopOf="@id/tv24h"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/percentChange1h"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@{cript.percentChange1h}"
+                android:textColor="@{cript.color1h}"
                 app:layout_constraintEnd_toStartOf="@id/tv1h"
                 app:layout_constraintBottom_toTopOf="@id/percentChange24h"
                 style="@style/tvPercentHours"/>
 
             <TextView
-                android:id="@+id/tv24h"
                 style="@style/tvLabelHours"
-                android:layout_height="wrap_content"
+                android:id="@+id/tv24h"
                 android:text="24h"
                 app:layout_constraintBottom_toTopOf="@id/tv7d"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
+                style="@style/tvPercentHours"
                 android:id="@+id/percentChange24h"
-                android:layout_height="wrap_content"
                 android:text="@{cript.percentChange24h}"
+                android:textColor="@{cript.color24h}"
                 app:layout_constraintEnd_toStartOf="@id/tv24h"
-                app:layout_constraintBottom_toTopOf="@id/percentChange7d"
-                style="@style/tvPercentHours"/>
+                app:layout_constraintBottom_toTopOf="@id/percentChange7d"/>
 
             <TextView
-                android:id="@+id/tv7d"
                 style="@style/tvLabelHours"
-                android:layout_height="wrap_content"
+                android:id="@+id/tv7d"
                 android:text="7d"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
+                style="@style/tvPercentHours"
                 android:id="@+id/percentChange7d"
-                android:layout_height="wrap_content"
                 android:text="@{cript.percentChange7d}"
+                android:textColor="@{cript.color7d}"
                 app:layout_constraintEnd_toStartOf="@id/tv7d"
-                app:layout_constraintBottom_toBottomOf="parent"
-                style="@style/tvPercentHours"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
+                style="@style/tvPriceRub"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:id="@+id/tvCriptPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
                 android:text="@{cript.priceRub}"
-                app:layout_constraintEnd_toStartOf="@id/percentChange24h"
-                android:gravity="center_vertical"/>
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
+                style="@style/tvName"
                 android:id="@+id/tvCriptName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@{cript.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/tvName"
                 android:text="@{cript.symbol}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 

@@ -11,10 +11,38 @@
     <style name="tvLabelHours">
         <item name="android:layout_width">30dp</item>
         <item name="android:gravity">right</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="tvPercentHours">
         <item name="android:layout_width">60dp</item>
         <item name="android:gravity">right</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tvPriceRub">
+        <!--<item name="android:layout_marginRight">15dp</item>-->
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="tvName">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

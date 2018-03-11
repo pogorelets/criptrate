@@ -15,8 +15,8 @@ import ru.helen.cript.api.Cript
  */
 class MainAdapter() : RecyclerView.Adapter<MainAdapter.MainHolder>() {
     private var items: List<Cript> = ArrayList()
-    val green: String = "#F44336"
-    val red: String = "#4CAF50"
+    val red: String = "#F44336"
+    val green: String = "#4CAF50"
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
         val binding: ViewDataBinding =
@@ -29,19 +29,11 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MainHolder>() {
 
     override fun onBindViewHolder(holder: MainHolder?, position: Int) {
         var item: Cript = items[position]
-        item.priceRub =  "${item.priceRub.substringBefore('.')}.${item.priceRub.substringAfterLast('.').substring(0,2)}"
-        when (item.percentChange1h.indexOf("-")){
-            -1 -> item.color1h = Color.parseColor(green)
-            else -> item.color1h = Color.parseColor(red)
-        }
-        when (item.percentChange24h.indexOf("-")){
-            -1 -> item.color24h = Color.parseColor(green)
-            else -> item.color24h = Color.parseColor(red)
-        }
-        when (item.percentChange7d.indexOf("-")){
-            -1 -> item.color7d = Color.parseColor(green)
-            else -> item.color7d = Color.parseColor(red)
-        }
+        item.priceRub =  "${item.priceRub.substringBefore('.')}.${item.priceRub.substringAfterLast('.').substring(0,2)}\u20BD"
+        if (item.percentChange1h.toFloat() > 0) {item.color1h = Color.parseColor(green)}else{item.color1h = Color.parseColor(red)}
+        if (item.percentChange24h.toFloat()> 0) { item.color24h = Color.parseColor(green)} else {item.color24h = Color.parseColor(red)}
+        if (item.percentChange7d.toFloat() > 0) {item.color7d = Color.parseColor(green)} else {item.color7d = Color.parseColor(red)}
+
         holder?.bind(item)
     }
 
